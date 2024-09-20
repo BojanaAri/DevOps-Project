@@ -1,0 +1,4 @@
+com\bezkoder\spring\data\mongodb\model\Tutorial.class
+com\bezkoder\spring\data\mongodb\controller\TutorialController.class
+com\bezkoder\spring\data\mongodb\SpringBootDataMongodbApplication.class
+com\bezkoder\spring\data\mongodb\repository\TutorialRepository.class
