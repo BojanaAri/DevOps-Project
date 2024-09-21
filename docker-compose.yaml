@@ -21,10 +21,14 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
       - ME_CONFIG_MONGODB_SERVER=mongodb
   spring-boot-app:
-    image: spring-boot-data-mongodb-master-spring-boot-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: springboot-app
     ports:
       - 9393:9393
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://rootuser:rootpass@mongodb:27017/admin
     depends_on:
       - mongodb
 volumes:

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Tutorials Management</h1>
+
+    <!-- Form to Add a New Tutorial -->
+    <div class="card mb-4">
+        <div class="card-header">Add New Tutorial</div>
+        <div class="card-body">
+            <form id="tutorialForm">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter tutorial title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Enter tutorial description" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Tutorial</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search and List Tutorials -->
+    <div class="card mb-4">
+        <div class="card-header">Search Tutorials</div>
+        <div class="card-body">
+            <form id="searchForm">
+                <div class="mb-3">
+                    <label for="searchTitle" class="form-label">Search by Title</label>
+                    <input type="text" class="form-control" id="searchTitle" placeholder="Enter title to search">
+                </div>
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tutorials List -->
+    <div id="tutorialList" class="list-group"></div>
+</div>
+
+<!-- Bootstrap JS and Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript to Handle the API Requests -->
+<script>
+    // Fetch and Display All Tutorials
+    function fetchTutorials() {
+        fetch('/tutorials')
+            .then(response => response.json())
+            .then(tutorials => {
+                const tutorialList = document.getElementById('tutorialList');
+                tutorialList.innerHTML = '';  // Clear the list before displaying
+
+                tutorials.forEach(tutorial => {
+                    const listItem = document.createElement('a');
+                    listItem.href = '#';
+                    listItem.className = 'list-group-item list-group-item-action';
+                    listItem.innerHTML = `<strong>${tutorial.title}</strong> - ${tutorial.description}`;
+                    tutorialList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching tutorials:', error));
+    }
+
+    // Add a New Tutorial
+    document.getElementById('tutorialForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+
+        fetch('/tutorials', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, description })
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert('Tutorial added successfully');
+                fetchTutorials();  // Refresh the tutorial list
+            })
+            .catch(error => console.error('Error adding tutorial:', error));
+    });
+
+    // Search Tutorials by Title
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTitle = document.getElementById('searchTitle').value;
+
+        fetch(`/tutorials?title=${searchTitle}`)
+            .then(response => response.json())
+            .then(tutorials => {
+                const tutorialList = document.getElementById('tutorialList');
+                tutorialList.innerHTML = '';  // Clear the list before displaying
+
+                if (tutorials.length > 0) {
+                    tutorials.forEach(tutorial => {
+                        const listItem = document.createElement('a');
+                        listItem.href = '#';
+                        listItem.className = 'list-group-item list-group-item-action';
+                        listItem.innerHTML = `<strong>${tutorial.title}</strong> - ${tutorial.description}`;
+                        tutorialList.appendChild(listItem);
+                    });
+                } else {
+                    tutorialList.innerHTML = '<p class="text-center">No tutorials found.</p>';
+                }
+            })
+            .catch(error => console.error('Error searching tutorials:', error));
+    });
+
+    // Load tutorials on page load
+    fetchTutorials();
+</script>
+</body>
+</html>

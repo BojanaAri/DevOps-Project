@@ -1,0 +1,10 @@
+{
+    "auths": {
+        "https://index.docker.io/v1/": {
+            "username": "arizizi",
+            "password": "swaggy123",
+            "email": "arizbojana@gmail.com",
+            "auth": "YXJpeml6aTpzd2FnZ3kxMjM="
+        }
+    }
+}
