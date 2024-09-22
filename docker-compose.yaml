@@ -26,7 +26,7 @@ services:
       dockerfile: Dockerfile
     container_name: springboot-app
     ports:
-      - 9393:9393
+      - 9393:9191
     environment:
       - SPRING_DATA_MONGODB_URI=mongodb://rootuser:rootpass@mongodb:27017/admin
     depends_on:

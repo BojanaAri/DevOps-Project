@@ -1,4 +1,5 @@
-C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\spring-boot-data-mongodb-app\spring-boot-data-mongodb-master\src\main\java\com\bezkoder\spring\data\mongodb\model\Tutorial.java
-C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\spring-boot-data-mongodb-app\spring-boot-data-mongodb-master\src\main\java\com\bezkoder\spring\data\mongodb\SpringBootDataMongodbApplication.java
-C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\spring-boot-data-mongodb-app\spring-boot-data-mongodb-master\src\main\java\com\bezkoder\spring\data\mongodb\controller\TutorialController.java
-C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\spring-boot-data-mongodb-app\spring-boot-data-mongodb-master\src\main\java\com\bezkoder\spring\data\mongodb\repository\TutorialRepository.java
+C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\src\main\java\com\bezkoder\spring\data\mongodb\controller\TutorialRestController.java
+C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\src\main\java\com\bezkoder\spring\data\mongodb\controller\TutorialController.java
+C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\src\main\java\com\bezkoder\spring\data\mongodb\model\Tutorial.java
+C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\src\main\java\com\bezkoder\spring\data\mongodb\repository\TutorialRepository.java
+C:\Users\Bojana\Desktop\finki\semestar 6\kiii-proekt\DevOps-project\DevOps-Project\src\main\java\com\bezkoder\spring\data\mongodb\SpringBootDataMongodbApplication.java
