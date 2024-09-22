@@ -17,4 +17,4 @@ spec:
               service:
                 name: springboot-app-service
                 port:
-                  number: 9393
+                  number: 9191

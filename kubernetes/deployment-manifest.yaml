@@ -17,9 +17,9 @@ spec:
         - name: registry-credentials-secret
       containers:
         - name: springboot-app
-          image: arizizi/dev-ops-project:main-46781fd
+          image: arizizi/dev-ops-project:main-6dcf2b3
           ports:
-            - containerPort: 9393
+            - containerPort: 9191
           env:
             - name: SPRING_BOOT_APP
               valueFrom:
