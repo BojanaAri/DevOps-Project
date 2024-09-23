@@ -8,6 +8,6 @@ spec:
     app: springboot-app
   ports:
     - protocol: TCP
-      port: 9393
+      port: 9191
       targetPort: 9191
-  type: ClusterIP 
+  type: ClusterIP

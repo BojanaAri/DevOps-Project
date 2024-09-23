@@ -4,7 +4,7 @@ metadata:
   name: mongodb-sts
   namespace: devops-app-namespace
 spec:
-  serviceName: mongodb-sts
+  serviceName: mongodb
   replicas: 3
   selector:
     matchLabels:
